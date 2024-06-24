@@ -4,16 +4,31 @@ import htmlMin from "gulp-htmlmin";
 import gulpAutoprefixer from "gulp-autoprefixer";
 import cleanCSS from "gulp-clean-css";
 import dartSass from 'sass';
+import uglify from "gulp-uglify";
 import gulpSass from 'gulp-sass';
 const sass = gulpSass(dartSass);
 import svgSprite from "gulp-svg-sprite";
 import { deleteAsync } from "del";
+import babel from 'gulp-babel';
 import sourcemaps from "gulp-sourcemaps";
 import browserSync from "browser-sync";
 
 // Очистка папки dist
 const clean = () => {
   return deleteAsync(["dist"]);
+};
+
+const scripts = () => {
+  return src("src/**/*.js")
+    .pipe(sourcemaps.init())
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
+    .pipe(concat("main.js"))
+    .pipe(uglify())
+    .pipe(sourcemaps.write())
+    .pipe(dest("dist"))
+    .pipe(browserSync.stream());
 };
 
 // Минификация HTML
@@ -103,11 +118,12 @@ const watchFiles = () => {
   watch("src/styles/**/*.scss", styles);
   watch("src/images/svg/**/*.svg", svgSprites);
   watch("src/images/**/*", copyImages);
+  watch("src/**/*.js", scripts);
 };
 
 // Сборка проекта
-const build = series(clean, htmlMinify, styles, svgSprites, copyImages);
-const dev = series(clean, htmlMinify, styles, svgSprites, copyImages, watchFiles);
+const build = series(clean, htmlMinify, styles, svgSprites, copyImages, scripts);
+const dev = series(clean, htmlMinify, styles, svgSprites, copyImages, scripts, watchFiles);
 
 export {
   clean,
@@ -118,6 +134,7 @@ export {
   watchFiles,
   build,
   dev,
+  scripts,
 };
 
 export default dev;

@@ -1,32 +1,64 @@
 .header-navigation:hover{
     color: #FF6E30;
+    transition: color 0.5s ease;
 }
 
 .header-navigation:active{
+    transition: color 0.5s ease;
     color: #CE4307;
+}
+
+.svg-search:hover path{
+    transition: fill 0.5s ease;
+    fill: #FF6E30;
+}
+
+.svg-search:focus-visible path{
+    fill: #BC572B;
+}
+
+.svg-search:active path{
+    transition: fill 0.5s ease;
+    fill: #CE4307;
+
 }
 
 .standart-button:hover{
     background-color: #BC572B;
+    transition: background-color 0.5s ease;
+}
+
+.standart-button:focus-visible{
+    border: 3px solid #CE4307;
 }
 
 .standart-button:active{
     background-color: #CE4307;
+    transition: background-color 0.5s ease;
 }
 
 .inherit-button:hover{
     background-color: #FF6E30;
+    transition: background-color 0.5s ease;
+}
+
+.inherit-button:focus-visible{
+    border: 3px solid #CE4307;
+    background-color: #BC572B;
 }
 
 .inherit-button:active{
     border-color: #CE4307;
     background-color:#CE4307;
+    transition: background-color 0.5s ease;
 }
 
 .header-navigation-mobile:hover{
     color: #FF6E30;
+    transition: color 0.5s ease;
 }
 
 .header-navigation-mobile:active{
     color: #CE4307;
+    transition:color 0.5s ease;
 }

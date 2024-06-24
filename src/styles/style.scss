@@ -8,12 +8,13 @@ header{
     width: 100%;
     height: 80px;
     color: #FFFFFF;
-    background-color: #202020;
     justify-content: center;
+    background-color: #202020;
 }
 
 .header__container{
     display: flex;
+    position: relative;
 }
 
 .logo{
@@ -29,8 +30,11 @@ header{
 
 .search-form {
     display: none;
-    align-items: center;
+    margin: auto;
+    position: relative;
+    right: 170px;
     gap: 5px;
+    z-index: 1000;
 
     .search-input {
       border: none;
@@ -45,8 +49,11 @@ header{
     }
 }
 
+
+
 .search-form-x{
     width: 23px;
+    cursor: pointer;
 }
 
 nav{
@@ -56,7 +63,7 @@ nav{
 
 /*scss формат*/
 
-nav {
+nav {   
     display: flex;
     justify-content: center;
 
@@ -239,8 +246,8 @@ main{
 }
 
 .photo__container-1-info{
-    position: absolute;
-    top: 405px;
+    position: relative;
+    top: -250px;
     left: 59px;
     color: white;
     padding: 10px;
@@ -263,7 +270,7 @@ main{
 }
 
 .photo__container-1-info-button{
-    width: 160px;
+    min-width: 145px;
     height: 50px;
     background-color: #FF6E30;
     color: #FFFFFF;
@@ -274,9 +281,10 @@ main{
 
 .photo__container-1-info-tag{
     display: flex;
-    position: absolute;
-    top: 15px;
+    position: relative;
+    bottom: 610px;
     left: 430px;
+    z-index: 999;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -353,8 +361,23 @@ main{
 
 .about__container-photo img{
     height: 255px;
-    width: 630px;
+    max-width: 630px;
     object-fit: cover; 
+}
+
+@media(max-width: 320px){
+    projects__grid-4,
+    projects__grid-5{
+        max-height: 422px;
+    }
+
+    projects__grid-1,
+    projects__grid-2,
+    projects__grid-3,
+    projects__grid-6,
+    projects__grid-7{
+        height: 278px;
+    }
 }
 
 @media(max-width: 1024px){
@@ -387,9 +410,9 @@ main{
     }
 
     .photo__container-1-info{
-        position: absolute;
-        top: 405px;
-        left: 10px;
+        position: relative;
+        top: -230px;
+        left: 20px;
         color: white;
     }
 
@@ -619,7 +642,7 @@ main{
     font-size: 24px;
     font-weight: 700;
     color: #FFFFFF;
-    position: absolute;
+    position: relative;
     width: 293px;
     height: 48px;
 }
@@ -628,8 +651,9 @@ main{
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 22px;
-    position: absolute;
-    width: 292px;
+    position: relative;
+    bottom: 50px;
+    max-width: 292px;
     padding-top: 40px;
     color: #FFFFFF;
 }
@@ -1115,8 +1139,8 @@ footer{
     }
 
     .about__container-photo img{
-        height: 400px;
-        width: 380px;
+        max-height: 400px;
+        max-width: 380px;
     }
 }
 
@@ -1138,8 +1162,8 @@ footer{
     }
 
     .about__container-photo img{
-        height: 360px;
-        width: 340px;
+        max-height: 360px;
+        max-width: 340px;
     }
 }
 
@@ -1272,7 +1296,40 @@ footer{
 
 }
 
+@media(max-width: 1920px){
+    .search-form{
+        right: 10px;
+    }
+}
+
+@media(max-width: 1024px){
+    nav{
+        max-width: 750px;
+    }
+
+    .search-form{
+        right: 90px;
+    }
+
+    header{
+        font-size: 16px;
+        font-weight: 400;
+        width: 100%;
+        height: 80px;
+        color: #FFFFFF;
+        background-color: #202020;
+    }
+}
+
 @media(max-width: 600px){
+
+    nav{
+        max-width: 170px;
+    }
+
+    .search-form{
+        right: 90px;
+    }
 
     
 
@@ -1320,6 +1377,28 @@ footer{
         object-fit: cover;
     }
 
+    .project-grid-11{
+        max-height: 300px;
+    }
+
+    .project-grid-22{
+        max-height: 278px;
+    }
+
+    .project-grid-33{
+        max-height: 278px;
+    }
+
+    .project-grid-66{
+        max-height: 300px;
+    }
+
+    .project-grid-77{
+        max-height: 300px;
+    }
+
+
+
     .header__container{
         gap: 18px;
         align-items: center;
@@ -1332,6 +1411,17 @@ footer{
         color: white;
         padding: 10px;
         box-sizing: border-box;
+    }
+
+    .projects__grid-data-big-text{
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        line-height: 22px;
+        position: relative;
+        bottom: -110px;
+        max-width: 292px;
+        padding-top: 40px;
+        color: #FFFFFF;
     }
 
     .footer{
@@ -1359,7 +1449,7 @@ footer{
         font-size: 16px;
         line-height: 22px;
         position: absolute;
-        width: 218px;
+        max-width: 218px;
         padding-top: 80px;
         color: #FFFFFF;
     }
@@ -1495,6 +1585,23 @@ footer{
     .burger{
         display: flex;
         
+    }
+}
+
+@media(max-width: 320px){
+    projects__grid-4,
+    projects__grid-5{
+        max-height: 422px;
+    }
+
+    
+
+    projects__grid-1,
+    projects__grid-2,
+    projects__grid-3,
+    projects__grid-6,
+    projects__grid-7{
+        height: 278px;
     }
 }
 
