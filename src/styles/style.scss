@@ -231,27 +231,18 @@ main{
     grid-row-gap: 18px;
 }
 
-
-.photo__container img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  
-}
-
-
 .photo__container-1{
-    position: relative;
-    z-index: 0;
+    padding: 5%;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url(https://sun1-84.userapi.com/s/v1/ig2/5ymA_AWIYXRED-h-sDXCd4rHOJSldqDyziP-Xh3VozZhSW61DWlk7rbg4Hwhh_RErtPBJLnV__7v9hUQ6GZPan6-.jpg?size=998x998&quality=95&crop=0,217,998,998&ava=1);
+    display: flex;
     grid-area: 1 / 1 / 4 / 2;
 }
 
 .photo__container-1-info{
-    position: relative;
-    top: -250px;
-    left: 59px;
     color: white;
-    padding: 10px;
-    box-sizing: border-box;
 }
 
 .photo__container-1-info-title{
@@ -280,27 +271,25 @@ main{
 }
 
 .photo__container-1-info-tag{
-    display: flex;
-    position: relative;
-    bottom: 610px;
-    left: 430px;
-    z-index: 999;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 400;
     color: #FFFFFF;
-    width: 123px;
-    height: 30px;
-    align-items: center;
-    justify-content: center;
+    max-width: 123px;
+    max-height: 30px;
     background-color: #202020;
 }
 
-@media(max-width: 1300px){
-    .photo__container-1-info-tag{
-        display: none;
-    }
+.photo__container-1-info-tag-block{
+    align-self: end;
+    align-items: center;
 }
+
+// @media(max-width: 1300px){
+//     .photo__container-1-info-tag{
+//         display: none;
+//     }
+// }
 
 
 .photo__container-2{
@@ -310,14 +299,20 @@ main{
 }
 
 .photo__container-3{
+    background-size: cover;
+    background-image: url(https://i.ytimg.com/vi/WyvXKl7vTRw/maxresdefault.jpg);
     grid-area: 2 / 2 / 3 / 4;
 }
 
 .photo__container-4{
+    background-size: cover;
+    background-image: url(https://webmaster-deals.s3.amazonaws.com/deal-img-2/1427/3/7b.jpg);
     grid-area: 3 / 2 / 4 / 3;
 }
 
 .photo__container-5{
+    background-size: cover;
+    background-image: url(https://i.ytimg.com/vi/VThWC5r9-Fg/maxresdefault.jpg);
     grid-area: 3 / 3 / 4 / 4;
 }
 
@@ -376,14 +371,14 @@ main{
     projects__grid-3,
     projects__grid-6,
     projects__grid-7{
-        height: 278px;
+        max-height: 278px;
     }
 }
 
 @media(max-width: 1024px){
     .about__container-photo img{
-        height: 332px;
-        width: 446px;
+        max-height: 332px;
+        max-width: 446px;
     }
 
     .about__form-action{
@@ -407,13 +402,6 @@ main{
     .footer__container{
         display: flex;
         gap: 109px;
-    }
-
-    .photo__container-1-info{
-        position: relative;
-        top: -230px;
-        left: 20px;
-        color: white;
     }
 
     .footer__text{
@@ -492,56 +480,79 @@ main{
     grid-row-gap: 30px;
 }
 
-.project__grid img{
-    object-fit: cover;
-}
-
 .projects__grid-1{
     grid-area: 1 / 1 / 2 / 2;
-    overflow: hidden;
+    flex-direction: column;
 }
 
-.projects__grid-1 img{
+.projects__grid-1-photo{
+    display: flex;
     height: 60%;
-
+    justify-content: end;
+    background-size: 100%;
+    background-image: url(https://images.wallpapershq.com/wallpapers/639/wallpaper_639_1536x2048.jpg);
 }
+
+.projects__grid-2-photo{
+    display: flex;
+    height: 60%;
+    justify-content: end;
+    background-size: 100%;
+    background-image: url(https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjEyMDd9);
+}
+
+.projects__grid-3-photo{
+    display: flex;
+    height: 60%;
+    justify-content: end;
+    background-size: 100%;
+    background-image: url(https://avatars.dzeninfra.ru/get-zen_doc/50840/pub_5e9c4eef97c2995b763d12f7_5e9dff0b4f5630594cd737d8/scale_1200);
+}
+
+.projects__grid-6-photo{
+    display: flex;
+    height: 60%;
+    justify-content: end;
+    background-size: 100%;
+    background-image: url(https://bogatyr.club/uploads/posts/2023-06/1687578211_bogatyr-club-p-natyurmort-s-mandarinami-foni-vkontakte-36.jpg);
+}
+
+.projects__grid-7-photo{
+    display: flex;
+    height: 60%;
+    justify-content: end;
+    background-size: 100% 100%;
+    background-image: url(https://profile-images.xing.com/images/3fe4daced72ea26ebdce633ee329cdee-4/thomas-zimmermann.1024x1024.jpg);
+}
+
 
 .projects__grid-2{
     grid-area: 1 / 2 / 2 / 3;
     overflow: hidden;
 }
 
-.projects__grid-2 img{
-    height: 60%;
-}
 
 .projects__grid-3{
     grid-area: 1 / 3 / 2 / 4;
     overflow: hidden;
 }
 
-.projects__grid-3 img{
-    height: 60%;
-}
-
 .projects__grid-4{
+    display: flex;
+    justify-content: space-between;
     grid-area: 1 / 4 / 2 / 6;
     overflow: hidden;
-}
-
-.projects__grid-4 img{
-    height: 100%;
-    object-fit: cover;
+    background-size: cover;
+    background-image: url(https://www.miloserdie.ru/wp-content/uploads/2022/03/4-7.jpg);
 }
 
 .projects__grid-5{
+    display: flex;
+    justify-content: space-between;
     grid-area: 2 / 1 / 3 / 4;
     overflow: hidden;
-}
-
-.projects__grid-5 img{
-    height: 100%;
-    object-fit: cover;
+    background-size: cover;
+    background-image: url(https://images.wallpaperscraft.ru/image/single/led_zamerzshij_sneg_173659_2780x2780.jpg);
 }
 
 .projects__grid-6{
@@ -549,17 +560,9 @@ main{
     overflow: hidden;
 }
 
-.projects__grid-6 img{
-    height: 60%;
-}
 
 .projects__grid-7{
     grid-area: 2 / 5 / 3 / 6;
-}
-
-.projects__grid-7 img{
-    height: 60%;
-    object-fit: cover;
 }
 
 .projects__grid-1,
@@ -569,7 +572,6 @@ main{
 .projects__grid-5,
 .projects__grid-6,
 .projects__grid-7{
-    position: relative;
     display: flex;
     flex-direction: column;
 }
@@ -630,8 +632,7 @@ main{
 }
 
 .project__grid-big{
-    position: absolute;
-    padding: 30px;
+    padding: 20px;
 }
 
 .projects__grid-data-big{
@@ -642,27 +643,41 @@ main{
     font-size: 24px;
     font-weight: 700;
     color: #FFFFFF;
-    position: relative;
-    width: 293px;
-    height: 48px;
+    max-width: 293px;
+    max-height: 48px;
+}
+
+.projects__grid-data-big-text-4{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 292px;
+    color: #FFFFFF;
 }
 
 .projects__grid-data-big-text{
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 22px;
-    position: relative;
-    bottom: 50px;
     max-width: 292px;
-    padding-top: 40px;
     color: #FFFFFF;
 }
 
 .projects__grid-tag{
-    margin: 10px;
-    position: absolute;
     display: flex;
-    align-self: flex-end;
+    margin: 10px;
+    align-items: center;
+    background-color: #202020;
+    height: 28px;
+}
+
+.projects__grid-tag-big{
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    display: flex;
+    margin: 10px;
+    align-self: end;
+    align-items: center;
     background-color: #202020;
     height: 28px;
 }
@@ -675,17 +690,15 @@ main{
 }
 
 .projects__grid-big-button{
-    position: absolute;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 700;
-    width: 121px;
-    height: 50px;
+    max-width: 121px;
+    min-height: 50px;
+    margin: 5%;
     border: 3px solid #FF6E30;
     background-color: inherit;
     color: #FFFFFF;
-    top: 220px; /* Сдвигаем элемент вниз на 100px */
-    left: 30px; /* Сдвигаем элемент вправо на 50px */
 }
 
 /* contact */
@@ -1082,15 +1095,6 @@ footer{
         list-style: none;
         gap: 50px;
     }
-
-    .photo__container-1-info{
-        position: absolute;
-        top: 275px;
-        left: 20px;
-        color: white;
-        padding: 10px;
-        box-sizing: border-box;
-    }
 }
 
 @media(max-width: 650px){
@@ -1186,8 +1190,8 @@ footer{
     }
 
     .about__container-photo img{
-        height: 400px;
-        width: 300px;
+        max-height: 400px;
+        max-width: 300px;
     }
 }
 
@@ -1259,28 +1263,19 @@ footer{
         display: none;
     }
 
-    .photo__container-1-info{
-        position: absolute;
-        top: 220px;
-        left: 20px;
-        color: white;
-        padding: 10px;
-        box-sizing: border-box;
-    }
-
     .about__container{
         padding-bottom: 60px;
         flex-direction: column;
     }
 
     .about__container-photo img{
-        height: 278px;
-        width: 278px;
+        max-height: 278px;
+        max-width: 278px;
     }
 
     .about{
         display: flex;
-        height: 1282px;
+        max-height: 1282px;
     }
 
     .about__form{
@@ -1331,97 +1326,75 @@ footer{
         right: 90px;
     }
 
-    
-
-    // .project__grid{
-    //     display: flex;
-    
-    // }
-
-    // .projects__grid-1{
-    //     grid-area: 1 / 1 / 2 / 3;
-    // }
-
-    // .projects__grid-1{
-    //     grid-area: 2 / 1 / 3 / 3;
-    // }
-
-    // .projects__grid-1{
-    //     grid-area: 3 / 1 / 4 / 3;
-    // }
-
-    // .projects__grid-1{
-    //     grid-area: 4 / 1 / 5 / 2;
-    // }
-
-    // .projects__grid-1{
-    //     grid-area: 7 / 1 / 8 / 2;
-    // }
-
-    // .projects__grid-1{
-    //     grid-area: 5 / 1 / 6 / 2;
-    // }
-
-    // .projects__grid-1{
-    //     grid-area: 6 / 1 / 7 / 2;
-    // }
-
     .projects__grid{
-        padding: 5px;
         display: flex;
         flex-direction: column;
+        height: 100%;
+    }
+    
+
+    .projects__grid-1-photo{
+        background-size: cover;
+        min-height: 278px;
     }
 
-    .projects__grid img{
-        height: 422px;
-        object-fit: cover;
+    .projects__grid-2-photo{
+        background-size: cover;
+        min-height: 278px;
     }
 
-    .project-grid-11{
-        max-height: 300px;
+    .projects__grid-3-photo{
+        background-size: cover;
+        min-height: 278px;
     }
 
-    .project-grid-22{
-        max-height: 278px;
+    .projects__grid-4{
+        min-height: 422px;
     }
 
-    .project-grid-33{
-        max-height: 278px;
+    .projects__grid-5{
+        background-size: cover;
+        min-height: 422px;
     }
 
-    .project-grid-66{
-        max-height: 300px;
+
+    .projects__grid-6-photo{
+        background-size: cover;
+        min-height: 278px;
     }
 
-    .project-grid-77{
-        max-height: 300px;
+    .projects__grid-7-photo{
+        min-height: 278px;
+        background-size: cover;
     }
+    
+    .projects__grid-data-big-title{
+        font-size: 24px;
+        font-weight: 700;
+        color: #FFFFFF;
+        max-width: 293px;
+        max-height: 48px;
+    }
+
+    .project__grid-big{
+        padding: 30px;
+    }
+    
+    .projects__grid-data-big-text-4{
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        line-height: 22px;
+        max-width: 292px;
+        color: #FFFFFF;
+        padding-top: 30px;
+    }
+
 
 
 
     .header__container{
         gap: 18px;
         align-items: center;
-    }
-
-    .photo__container-1-info{
-        position: absolute;
-        top: 180px;
-        left: 20px;
-        color: white;
-        padding: 10px;
-        box-sizing: border-box;
-    }
-
-    .projects__grid-data-big-text{
-        font-family: 'Roboto', sans-serif;
-        font-size: 16px;
-        line-height: 22px;
-        position: relative;
-        bottom: -110px;
-        max-width: 292px;
-        padding-top: 40px;
-        color: #FFFFFF;
     }
 
     .footer{
@@ -1437,60 +1410,6 @@ footer{
         padding: 15px;  
         display: flex;
         flex-direction: column-reverse;
-    }
-
-    .project__grid-big{
-        position: absolute;
-        padding-top: 70px;
-    }
-
-    .projects__grid-data-big-text{
-        font-family: 'Roboto', sans-serif;
-        font-size: 16px;
-        line-height: 22px;
-        position: absolute;
-        max-width: 218px;
-        padding-top: 80px;
-        color: #FFFFFF;
-    }
-    
-    .projects__grid-tag{
-        margin: 10px;
-        position: absolute;
-        display: flex;
-        align-self: flex-end;
-        background-color: #202020;
-        height: 28px;
-    }
-    
-    .projects__grid-tag p{
-        margin: auto;
-        text-align: center;
-        color: #FFFFFF;
-        font-family: 'Roboto', sans-serif;
-    }
-    
-    .projects__grid-big-button{
-        position: absolute;
-        font-family: 'Roboto', sans-serif;
-        font-size: 16px;
-        font-weight: 700;
-        width: 121px;
-        height: 50px;
-        border: 3px solid #FF6E30;
-        background-color: inherit;
-        color: #FFFFFF;
-        top: 350px; /* Сдвигаем элемент вниз на 100px */
-        left: 30px; /* Сдвигаем элемент вправо на 50px */
-    }
-
-    .projects__grid-data-big-title{
-        font-size: 24px;
-        font-weight: 700;
-        color: #FFFFFF;
-        position: absolute;
-        width: 219px;
-        height: 48px;
     }
 
     .overlay{
@@ -1588,22 +1507,22 @@ footer{
     }
 }
 
-@media(max-width: 320px){
-    projects__grid-4,
-    projects__grid-5{
-        max-height: 422px;
-    }
+// @media(max-width: 320px){
+//     projects__grid-4,
+//     projects__grid-5{
+//         max-height: 422px;
+//     }
 
     
 
-    projects__grid-1,
-    projects__grid-2,
-    projects__grid-3,
-    projects__grid-6,
-    projects__grid-7{
-        height: 278px;
-    }
-}
+//     projects__grid-1,
+//     projects__grid-2,
+//     projects__grid-3,
+//     projects__grid-6,
+//     projects__grid-7{
+//         height: 278px;
+//     }
+// }
 
 
 
