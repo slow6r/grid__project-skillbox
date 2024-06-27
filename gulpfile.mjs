@@ -1,6 +1,5 @@
 import { src, dest, series, watch } from "gulp";
 import concat from "gulp-concat";
-import htmlMin from "gulp-htmlmin";
 import gulpAutoprefixer from "gulp-autoprefixer";
 import cleanCSS from "gulp-clean-css";
 import dartSass from 'sass';
@@ -31,21 +30,9 @@ const scripts = () => {
     .pipe(browserSync.stream());
 };
 
-// Минификация HTML
-const htmlMinify = () => {
+// Копирование HTML (без минификации)
+const htmlCopy = () => {
   return src("src/**/*.html")
-    .pipe(
-      htmlMin({
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true,
-        minifyCSS: true,
-        minifyJS: true,
-      })
-    )
     .pipe(dest("dist"))
     .pipe(browserSync.stream());
 };
@@ -114,7 +101,7 @@ const watchFiles = () => {
     },
   });
 
-  watch("src/**/*.html", htmlMinify);
+  watch("src/**/*.html", htmlCopy);
   watch("src/styles/**/*.scss", styles);
   watch("src/images/svg/**/*.svg", svgSprites);
   watch("src/images/**/*", copyImages);
@@ -122,13 +109,13 @@ const watchFiles = () => {
 };
 
 // Сборка проекта
-const build = series(clean, htmlMinify, styles, svgSprites, copyImages, scripts);
-const dev = series(clean, htmlMinify, styles, svgSprites, copyImages, scripts, watchFiles);
+const build = series(clean, htmlCopy, styles, svgSprites, copyImages, scripts);
+const dev = series(clean, htmlCopy, styles, svgSprites, copyImages, scripts, watchFiles);
 
 export {
   clean,
   styles,
-  htmlMinify,
+  htmlCopy,
   copyImages,
   svgSprites,
   watchFiles,
