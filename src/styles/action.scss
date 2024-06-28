@@ -8,6 +8,22 @@
     color: #CE4307;
 }
 
+.header-navigation:focus-visible{
+    outline: none;
+    background-color: #BC572B;
+}
+
+.search-form-xxx:focus-visible{
+    outline: none;
+}
+
+.search-form-xxx:focus{
+    outline: none;
+    border: none;
+    stroke: transparent;
+    stroke-width: 0px;  
+}
+
 .svg-search:hover path{
     transition: fill 0.5s ease;
     fill: #FF6E30;
@@ -62,3 +78,34 @@
     color: #CE4307;
     transition:color 0.5s ease;
 }
+
+.input-name:hover::placeholder{
+    color: #FF6E30;
+}
+
+.input-name:focus-visible{
+    outline: none;
+    border: 1px solid #FF6E30;
+}
+
+.input-email:hover::placeholder{
+    color: #FF6E30;
+}
+
+.input-email:focus-visible{
+    outline: none;
+    border: 1px solid #FF6E30;
+}
+
+.input-message:hover::placeholder{
+    color: #FF6E30;
+}
+
+.input-message:focus-visible{
+    outline: none;
+    border: 1px solid #FF6E30;
+}
+
+
+
+
